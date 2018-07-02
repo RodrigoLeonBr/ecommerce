@@ -1,8 +1,8 @@
 <?php 
 
 use \Hcode\Page;
-use \Hcode\Model\Category;
 use \Hcode\Model\Product;
+use \Hcode\Model\Category;
 
 $app->get('/', function() {
 
@@ -27,8 +27,8 @@ $app->get("/categories/:idcategory", function($idcategory){
 
 	$page->setTpl("category", [
 		'category'=>$category->getValues(),
-		'produtcs'=>[]
-	]);	
+		'products'=>Product::checkList($category->getProducts())
+	]);
 
 });
 
