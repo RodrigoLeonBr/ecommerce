@@ -3,7 +3,28 @@
 namespace Hcode;
 
 use Rain\Tpl;
-use PHPMailer\PHPMailer\PHPMailer;
+
+require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 
+	"vendor" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"src" . DIRECTORY_SEPARATOR .
+	"Exception.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 
+	"vendor" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"src" . DIRECTORY_SEPARATOR .
+	"PHPMailer.php");
+require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 
+	"vendor" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"phpmailer" . DIRECTORY_SEPARATOR .
+	"src" . DIRECTORY_SEPARATOR .
+	"SMTP.php");
+//require 'path/to/PHPMailer/src/Exception.php';
+//require 'path/to/PHPMailer/src/PHPMailer.php';
+//require 'path/to/PHPMailer/src/SMTP.php';
 
 class Mailer {
 
@@ -34,7 +55,7 @@ class Mailer {
 		$html = $tpl->draw($tplName, true);
 
 		//Create a new PHPMailer instance
-		$this->mail = new \PHPMailer\PHPMailer;
+		$this->mail = new \PHPMailer\PHPMailer\PHPMailer();
 
 		//Tell PHPMailer to use SMTP
 		$this->mail->isSMTP();
