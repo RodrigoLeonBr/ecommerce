@@ -44,8 +44,7 @@ $app->post("/admin/orders/:idorder/status", function($idorder){
 
 	Order::setSuccess("Status atualizado com sucesso.");
 
-	header("Location: /admin/orders/".$idorder."/status");
-	
+	header("Location: /admin/orders/".$idorder."/status");	
 	exit;
 });
 
