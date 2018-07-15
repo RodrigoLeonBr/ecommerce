@@ -43,7 +43,6 @@ $app->get("/admin/products", function(){
 		"products"=>$pagination['data'],
 		"search"=>$search,
 		"pages"=>$pages
-
 	]);
 
 });
